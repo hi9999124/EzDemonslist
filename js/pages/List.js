@@ -98,31 +98,28 @@ export default {
                             </li>
                         </ol>
                     </template>
-                    <h3>Submission Requirements</h3>
-                    <p>
-                        Achieved the record without using hacks (however, FPS bypass is allowed, up to 360fps)
-                    </p>
-                    <p>
-                        Achieved the record on the level that is listed on the site - please check the level ID before you submit a record
-                    </p>
-                    <p>
-                        Have either source audio or clicks/taps in the video. Edited audio only does not count
-                    </p>
-                    <p>
-                        The recording must have a previous attempt and entire death animation shown before the completion, unless the completion is on the first attempt. Everyplay records are exempt from this
-                    </p>
-                    <p>
-                        The recording must also show the player hit the endwall, or the completion will be invalidated.
-                    </p>
-                    <p>
-                        Do not use secret routes or bug routes
-                    </p>
-                    <p>
-                        Do not use easy modes, only a record of the unmodified level qualifies
-                    </p>
-                    <p>
-                        Once a level falls onto the Legacy List, we accept records for it for 24 hours after it falls off, then afterwards we never accept records for said level
-                    </p>
+<h3>Submission Requirements</h3>
+<p>
+    <strong>1. Legitimacy & Mods:</strong> Records must be achieved without hacks or gameplay-altering mods (e.g., speedhack, noclip, hitbox display). Quality-of-life mods (like Geode, Megahack UI, or basic FPS bypass up to 360 FPS) are fully allowed.
+</p>
+<p>
+    <strong>2. Correct Level:</strong> You must complete the exact level ID linked on the site. Modified, copied, or bugged versions will be rejected.
+</p>
+<p>
+    <strong>3. Raw Audio Requirement:</strong> The video must include clear game audio or audible physical clicks/taps. Submissions with edited-over music, muted audio, or missing clicks will be denied.
+</p>
+<p>
+    <strong>4. Full Completion Footage:</strong> The recording must cleanly show the entire attempt from 0% to the endwall / end screen without any cuts, splices, or overlays hiding gameplay.
+</p>
+<p>
+    <strong>5. No Exploits:</strong> Skip routes, secret ways, or unintended bugged paths that bypass significant portions of the level are prohibited.
+</p>
+<p>
+    <strong>6. Video Quality & Availability:</strong> Videos must be uploaded to a public host (YouTube, Twitch VOD, Streamable) at a readable resolution (minimum 720p recommended) so gameplay details are visible.
+</p>
+<p>
+    <strong>7. Legacy Submissions:</strong> Once a level falls off the main list into the Legacy section, new submissions are accepted for <strong>7 days</strong> after the move. After that window closes, no new legacy records will be accepted.
+</p>
                 </div>
             </div>
         </main>
