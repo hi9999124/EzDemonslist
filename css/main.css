@@ -1,26 +1,28 @@
 :root {
-    --color-background: white;
-    --color-on-background: black;
-    --color-background-hover: #eee;
-    --color-on-background-hover: black;
-    --color-primary: #0066ff;
-    --color-on-primary: white;
-    --color-error: #de0000;
-    --color-on-error: white;
+    /* Light Theme: Purplish dark-blue primary with cool light-blue tinted backgrounds */
+    --color-background: #f0f3fa; 
+    --color-on-background: #0d1126;
+    --color-background-hover: #e2e6f2;
+    --color-on-background-hover: #050714;
+    --color-primary: #3b3687; /* Purplish dark blue */
+    --color-on-primary: #ffffff;
+    --color-error: #d93838;
+    --color-on-error: #ffffff;
 }
 
 main.dark,
 header.dark {
     color-scheme: dark;
-    --color-background: #1c1b1f;
-    --color-on-background: white;
-    --color-background-hover: #27262c;
-    --color-on-background-hover: white;
-    --color-primary: #283593;
-    --color-primary-disabled: #1f213c;
-    --color-on-primary: white;
-    --color-error: #de0000;
-    --color-on-error: white;
+    /* Dark Theme: Deep purplish dark-blue backgrounds with light blue/purple accents */
+    --color-background: #12132b; 
+    --color-on-background: #e6e8fa;
+    --color-background-hover: #1f2142;
+    --color-on-background-hover: #ffffff;
+    --color-primary: #8e94f2; /* Purplish light blue */
+    --color-primary-disabled: #282a52;
+    --color-on-primary: #0b0c1e;
+    --color-error: #ff6b6b;
+    --color-on-error: #000000;
 }
 
 html,
