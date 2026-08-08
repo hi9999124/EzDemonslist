@@ -16,13 +16,9 @@ export default {
                     Shameless copy of the Extreme Demon Roulette by <a href="https://matcool.github.io/extreme-demon-roulette/" target="_blank">matcool</a>.
                 </p>
                 <form class="options">
-                    <div class="check">
-                        <input type="checkbox" id="main" value="Main List" v-model="useMainList">
-                        <label for="main">Main List</label>
-                    </div>
-                    <div class="check">
-                        <input type="checkbox" id="extended" value="Extended List" v-model="useExtendedList">
-                        <label for="extended">Extended List</label>
+                    <div class="check" v-for="(_, tier) in tiers" :key="tier">
+                        <input type="checkbox" :id="tier" v-model="tiers[tier]">
+                        <label :for="tier">{{ tier }}</label>
                     </div>
                     <Btn @click.native.prevent="onStart">{{ levels.length === 0 ? 'Start' : 'Restart'}}</Btn>
                 </form>
@@ -106,8 +102,13 @@ export default {
         percentage: undefined,
         givenUp: false,
         showRemaining: false,
-        useMainList: true,
-        useExtendedList: true,
+        tiers: {
+            "Extreme Demon": true,
+            "Insane Demon": true,
+            "Hard Demon": true,
+            "Medium Demon": true,
+            "Easy Demon": true,
+        },
         toasts: [],
         fileInput: undefined,
     }),
@@ -163,7 +164,11 @@ export default {
                 return;
             }
 
-            if (!this.useMainList && !this.useExtendedList) {
+            const activeTiers = Object.entries(this.tiers)
+                .filter(([, enabled]) => enabled)
+                .map(([tier]) => tier);
+
+            if (activeTiers.length === 0) {
                 return;
             }
 
@@ -179,20 +184,18 @@ export default {
                 return;
             }
 
-            const fullListMapped = fullList.map(([lvl, _], i) => ({
-                rank: i + 1,
-                id: lvl.id,
-                name: lvl.name,
-                video: lvl.verification,
-            }));
-            const list = [];
-            if (this.useMainList) list.push(...fullListMapped.slice(0, 75));
-            if (this.useExtendedList) {
-                list.push(...fullListMapped.slice(75, 150));
-            }
+            const fullListMapped = fullList
+                .map(([lvl, _], i) => ({
+                    rank: i + 1,
+                    id: lvl?.id,
+                    name: lvl?.name,
+                    video: lvl?.verification,
+                    difficultyTier: lvl?.difficultyTier,
+                }))
+                .filter((lvl) => activeTiers.includes(lvl.difficultyTier));
 
             // random 100 levels
-            this.levels = shuffle(list).slice(0, 100);
+            this.levels = shuffle(fullListMapped).slice(0, 100);
             this.showRemaining = false;
             this.givenUp = false;
             this.progression = [];

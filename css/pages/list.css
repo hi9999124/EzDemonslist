@@ -5,13 +5,58 @@
 }
 .page-list .list-container {
     padding-inline: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    min-height: 0;
 }
 .page-list .meta-container {
     padding-right: 2rem;
 }
 
+.page-list .list-controls {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+.page-list .list-search {
+    font: inherit;
+    padding: 0.75rem 1rem;
+    border-radius: 0.5rem;
+    border: none;
+    background-color: var(--color-background-hover);
+    color: var(--color-on-background);
+}
+.page-list .list-filters {
+    display: flex;
+    gap: 0.5rem;
+}
+.page-list .list-filters select {
+    flex: 1;
+    font: inherit;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    border: none;
+    background-color: var(--color-background-hover);
+    color: var(--color-on-background);
+}
+.page-list .list-scroll {
+    overflow: auto;
+}
+
 .page-list .list {
     table-layout: auto;
+}
+.page-list .list .list-section td {
+    padding-block: 0.5rem;
+    color: var(--color-primary);
+    position: sticky;
+    top: 0;
+    background-color: var(--color-background);
+}
+.page-list .list .list-empty {
+    padding: 1rem;
+    opacity: 0.7;
 }
 .page-list .list .rank {
     text-align: end;
@@ -30,6 +75,15 @@
     word-break: normal;
     overflow-wrap: anywhere;
     cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+}
+.page-list .list .tier-dot {
+    flex-shrink: 0;
+    height: 0.6rem;
+    width: 0.6rem;
+    border-radius: 50%;
 }
 .page-list .list .level.error button {
     color: var(--color-error);
@@ -57,8 +111,59 @@
     grid-auto-rows: max-content;
     gap: 1rem;
 }
+.page-list .level-container .level .level-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: -1rem;
+}
+.page-list .level-container .level .chip {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.25rem 0.75rem;
+    border-radius: 1rem;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: #ffffff;
+    background-color: var(--color-primary);
+}
+.page-list .level-container .level .chip-era,
+.page-list .level-container .level .chip-coins {
+    background-color: var(--color-background-hover);
+    color: var(--color-on-background-hover);
+}
+.page-list .level-container .level .chip-extreme,
+.page-list .list .tier-extreme {
+    background-color: #e53935;
+}
+.page-list .level-container .level .chip-insane,
+.page-list .list .tier-insane {
+    background-color: #8e24aa;
+}
+.page-list .level-container .level .chip-hard,
+.page-list .list .tier-hard {
+    background-color: #fb8c00;
+}
+.page-list .level-container .level .chip-medium,
+.page-list .list .tier-medium {
+    background-color: #1e88e5;
+}
+.page-list .level-container .level .chip-easy,
+.page-list .list .tier-easy {
+    background-color: #43a047;
+}
+.page-list .level-container .level .video-container {
+    position: relative;
+}
+.page-list .level-container .level .showcase-toggle {
+    position: absolute;
+    bottom: 0.75rem;
+    right: 0.75rem;
+}
 .page-list .level-container .level .video {
     aspect-ratio: 16/9;
+    width: 100%;
+    display: block;
 }
 .page-list .level-container .level .stats {
     display: flex;
@@ -71,6 +176,9 @@
     flex-direction: column;
     align-items: center;
     gap: 1rem;
+}
+.page-list .level-container .level .records-scroll {
+    overflow-x: auto;
 }
 .page-list .level-container .level .records {
     table-layout: fixed;
@@ -125,4 +233,21 @@
 }
 .page-list .meta .editors li a:hover {
     text-decoration: underline;
+}
+
+@media screen and (max-width: 900px) {
+    .page-list .list-container,
+    .page-list .level-container,
+    .page-list .meta-container {
+        padding-inline: 1rem;
+        padding-block: 1rem;
+    }
+    .page-list .level-container .level {
+        padding-right: 0;
+        max-width: 100%;
+    }
+    .page-list .level-container .level .stats {
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
 }
