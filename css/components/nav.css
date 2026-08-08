@@ -52,3 +52,14 @@
 .nav .nav__actions .nav__cta:hover:not(:active) {
     transform: translateY(-2px);
 }
+
+@media screen and (max-width: 900px) {
+    .nav {
+        flex-wrap: wrap;
+        row-gap: 0.5rem;
+    }
+    .nav .nav__actions {
+        flex-basis: 100%;
+        justify-content: flex-start;
+    }
+}
